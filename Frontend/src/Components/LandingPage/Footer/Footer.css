@@ -1,0 +1,41 @@
+.boxfooter{
+    width: 100%;
+    position: relative;
+  
+    margin-top: 20px;
+    height: 70px;
+    background-color: rgba(22, 18, 18, 0.8);
+   
+   
+
+}
+.outer .row{
+    width: 100%;
+    
+}
+.outer{
+    left: 0%;
+    bottom: 0%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+   display: flex;
+   flex-direction: row;
+   height: 100%;
+   color: white;
+   font-size: 15px;
+   flex-wrap: wrap;
+}
+.outer i{
+    padding: 0 5px;
+}
+.outer .icons i:hover{
+color: chocolate;
+}
+
+
+@media only screen and (max-width: 576px) {
+    .boxfooter{
+        height: 100%;
+    }
+}

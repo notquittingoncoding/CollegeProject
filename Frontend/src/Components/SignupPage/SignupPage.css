@@ -1,0 +1,30 @@
+.img-style {
+    border-radius: 1rem 0 0 1rem;
+  }
+  
+  .signin-text {
+    letter-spacing: 1px;
+  }
+  
+  .login-bg {
+    /* background-image: url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'); */
+    background-size: cover;
+  }
+  
+  .card-props {
+    opacity: 0.8;
+    /* box-shadow: 3px 5px grey; */
+    box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 11px -7px rgba(0,0,0,0.75);
+  }
+  
+  .brand-name {
+    color: #00478f;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* .img-fluid {
+  
+  } */
+  

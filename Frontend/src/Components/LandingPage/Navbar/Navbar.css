@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+.cara{
+  
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  
+}
+.head{
+   
+    height: 100%;
+  
+}
+.tansparentshading{
+ position: absolute;
+
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 700px;
+ z-index: 99;
+
+ text-align: center;
+ flex-direction: column;
+    
+}
+.tansparentshading p{
+ 
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif; 
+    text-decoration: underline;
+    word-spacing: 20px;
+}
+.tansparentshading span{
+    color: white;
+    font-size: 30px;
+    font-weight:normal;
+    font-family: 'Lato', sans-serif; 
+}
+.head .navbar{
+
+    width: 100%;
+    /* background: linear-gradient(to top,transparent 0%,rgba(0,0,0,0.1));  */
+     box-shadow: -4px 7px 61px -20px rgba(25,21,21,0.9);
+     -webkit-box-shadow: -4px 7px 61px -20px rgba(25,21,21,0.9);
+     -moz-box-shadow: -4px 7px 61px -20px rgba(25,21,21,0.9);
+     position: absolute;
+     position: fixed;
+     background-color: rgba(22, 18, 28, 0.5);
+    
+     z-index: 999;
+  
+    
+    
+
+}
+
+.nav-item .nav-link{
+    color: white !important;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.carousel, .carousel-item{
+
+  height: 700px;
+}
+.carousel-item img{
+    height: 700px;
+}
+nav ul li:hover > .nav-link{
+    /* border-bottom:1px solid #e67e22; */
+    color: #e67e22 !important;
+}
+.scrolled{
+    background-color: rgba(22, 18, 18, 0.9) !important;
+}
+
+.head .dropdown-menu {
+    background-color: rgba(22, 18, 18, 0.9) !important;
+    box-shadow: -4px 7px 61px -20px rgba(25,21,21,0.9);
+    -webkit-box-shadow: -4px 7px 61px -20px rgba(25,21,21,0.9);
+    -moz-box-shadow: -4px 7px 61px -20px rgba(25,21,21,0.9);
+    border-top: 2px solid #e67e22 !important;
+   
+}
+.dropdown-item{
+    background-color: rgba(22, 18, 18, 0.9) !important;
+    
+    font-size: 15px;
+    font-weight: 400;
+    color: white !important;
+}
+.dropdown-item:hover{
+    color: #e67e22 !important;
+}
+
+@media only screen and (max-width: 576px){
+.navbartext{
+ 
+   
+    font-size: 30px;
+    
+}
+}
