@@ -3,16 +3,14 @@ import "./SignupPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpImage from "./Images/SignupImage.png";
 import { NavLink } from "react-router-dom";
+import Card from "../CreateExperience/Card/Card";
 
 export const SignupPage = () => {
   return (
-    <div className="login-bg mt-5">
-      <div className="container">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col col-xl-10">
-            <div className="card card-props" style={{ borderRadius: "1rem" }}>
+    
+            <Card>
               <div className="row g-0">
-                <div className="col-md-6 col-lg-5 col-sm-12 d-flex align-items-center justify-content-center">
+                <div className="col-md-6 col-lg-5 col-sm-12 d-none d-md-flex align-items-center justify-content-center">
                   <img
                     src={SignUpImage}
                     alt="login form"
@@ -102,11 +100,8 @@ export const SignupPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              </Card>
+                
   );
 };
 

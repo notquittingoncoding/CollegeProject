@@ -1,0 +1,17 @@
+.heading {
+    color: #8f5d00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+
+.background {
+    background-image: url("image/bg_createEx2.jpg");
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+}
+
+label {
+    color: #8f5d00;
+    font-size: 18px;
+}
