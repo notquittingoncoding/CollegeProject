@@ -30,7 +30,7 @@ const App=()=> {
     <SearchPlaces />
     </Route>
 
-      <Route exact path="/CreateEperience" >
+      <Route exact path="/CreateExperience" >
     <CreateExperience />
     </Route>
       <Route exact path="/Review" >

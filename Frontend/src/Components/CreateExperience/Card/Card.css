@@ -1,0 +1,8 @@
+.card-props {
+    opacity: 0.8;
+    /* box-shadow: 3px 5px grey; */
+    box-shadow: -1px 1px 11px -7px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 1px 11px -7px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 11px -7px rgba(0, 0, 0, 0.75);
+    padding: 10px;
+}

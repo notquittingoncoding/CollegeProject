@@ -76,7 +76,7 @@ export const Navbar = () => {
                   <NavLink className="dropdown-item" to="/SearchPlaces">
                     Search Places
                   </NavLink>
-                  <NavLink className="dropdown-item "  to="CraeteExperience">
+                  <NavLink className="dropdown-item "  to="CreateExperience">
                   Create Experience
                   </NavLink>
                 
