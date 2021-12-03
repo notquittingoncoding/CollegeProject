@@ -40,7 +40,7 @@ const port = process.env.PORT || 5000;
 
 const start = async() => {
     try {
-        await connectDb(process.env.MONGO_URI);
+        await connectDb(process.env.MONGO_URI || "mongodb://localhost:27017/travellers-scout");
         app.listen(port, () =>
             console.log(`Server is listening on port ${port}...`)
         );
