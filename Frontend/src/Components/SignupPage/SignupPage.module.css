@@ -1,12 +1,17 @@
-.img-style {
+.imgStyle {
     border-radius: 1rem 0 0 1rem;
 }
 
-.signin-text {
+.signinText {
     letter-spacing: 1px;
 }
 
-.brand-name {
+.brandName {
     color: #00478f;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.labelStyle {
+    color: black;
+    font-size: 17px;
 }

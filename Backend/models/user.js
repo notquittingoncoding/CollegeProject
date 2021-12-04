@@ -6,6 +6,12 @@ const validateEmail = function(email) {
     return re.test(email)
 };
 
+const ImageSchema = new Schema({
+    url: String,
+    filename: String
+});
+
+
 const UserSchema = new Schema({
     name: {
         type: String,
@@ -28,6 +34,8 @@ const UserSchema = new Schema({
         required: [true, 'Password is required'],
         minlength: 8
     },
+    userImage: ImageSchema,
+
     destinations: [{
         type: Schema.Types.ObjectId,
         ref: 'Destination'

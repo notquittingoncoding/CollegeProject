@@ -6,10 +6,10 @@ const Card = props =>{
 
     return (
         
-        <div className="container py-5 my-5">
+        <div className="container py-4 my-3">
             <div className="row d-flex justify-content-center align-items-center h-100">
                 <div className="col col-xl-10">
-                    <div className={classes +" card card-props"} style={{borderRadius: "1rem"}}>
+                    <div className={"card card-props "+classes} style={{borderRadius: "1rem"}}>
                         {props.children}
                     </div>
                 </div>
