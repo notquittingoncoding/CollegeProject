@@ -29,7 +29,7 @@ app.use(cors())
 //routes
 app.use('/api/v1/destinations', destinationRouter)
 app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/reviews/', reviewRouter)
+app.use('/api/v1/reviews', reviewRouter)
 
 
 app.use(notFoundMiddleware);
