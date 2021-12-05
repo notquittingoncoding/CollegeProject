@@ -1,11 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./SignupPage.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpImage from "./Images/SignupImage.png";
 import { NavLink } from "react-router-dom";
 import Card from "../CreateExperience/Card/Card";
+import {useHistory} from "react-router-dom";
+
 
 export const SignupPage = () => {
+  const history=useHistory();
+  const [user, setUser] = useState({
+      name: "",
+      username: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+      photo:""
+
+  })
+  let name, value;
+  const handleInputs = (e) => {
+      name = e.target.name;
+      value = e.target.value;
+      setUser({ ...user, [name]: value });
+  }
+  const uploadImage = (e) => {
+    e.preventDefault();
+    setUser({ ...user, photo: e.target.files[0] });
+    console.log(e.target.files[0]);
+
+}
+  const PostData = async(e)=>{
+    e.preventDefault();
+    const {name,username,email,password,confirmpassword,photo}=user;
+    if(!name || !username || !email || !password || !confirmpassword || !photo)
+    {
+      alert("Fill all fields");
+    }
+    else if(confirmpassword!==password){
+    alert("password mismatch");
+
+    }
+    else{
+
+try{
+    await fetch("/auth/register",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            name,username,email,password,confirmpassword,photo
+        })
+    });
+  }
+  catch(err)
+  {
+    console.log(err);
+  }
+}
+}
   return (
 
     <Card>
@@ -34,49 +88,66 @@ export const SignupPage = () => {
               <div className="form-outline mb-2">
                 <input
                   type="text"
-                  id="first-name"
+                  name="name"
+                  value={user.name}
                   className="form-control form-control-md"
                   placeholder="enter your name*"
-                  required
+                  onChange={handleInputs}
+                  required 
+
                 />
               </div>
 
               <div className="form-outline mb-2">
                 <input
                   type="text"
-                  id="username"
+                  name="username"
+                  value={user.username}
                   className="form-control form-control-md"
                   placeholder="enter username*"
-                  required
+                  onChange={handleInputs}
+                  required 
+
                 />
               </div>
 
               <div className="form-outline mb-2">
                 <input
                   type="email"
-                  id="email-id"
+                  name="email"
+                  value={user.email}
                   className="form-control form-control-md"
                   placeholder="email*"
-                  required
+                  onChange={handleInputs}
+                  required 
+
                 />
               </div>
 
               <div className="form-outline mb-2">
                 <input
                   type="password"
-                  id="password"
+       
+                  name="password"
+                  value={user.password}
                   className="form-control form-control-md"
                   placeholder="password*"
-                  required
+                  onChange={handleInputs}
+                  required 
+
                 />
               </div>
               <div className="form-outline mb-4">
                 <input
                   type="password"
-                  id="verify-password"
+               
+                  name="confirmpassword"
+                  value={user.confirmpassword}
                   className="form-control form-control-md"
                   placeholder="verify password*"
-                  required
+                  onChange={handleInputs}
+                  required 
+
                 />
               </div>
 
@@ -86,19 +157,21 @@ export const SignupPage = () => {
                   className="form-control"
                   type="file"
                   alt='Picture of a destination'
-                  id="choose-files"
-                  name="image"
+                  name="photo" 
+                  onChange={uploadImage}
                   accept="image/*"
                   placeholder="Add a profile picture"
                 />
               </div>
 
               <div className="pt-1 mb-4">
-                <button className="btn btn-dark btn-md" type="button">
+                <button className="btn btn-dark btn-md" type="button"
+                onClick={PostData} >
                   Sign Up
                 </button>
                 <br />
-                <span className="small text-danger">fields marked * are required</span>
+                <span className="small text-danger">fields marked * are required 
+                </span>
               </div>
             </form>
             <a className="small text-muted" href="#!">
