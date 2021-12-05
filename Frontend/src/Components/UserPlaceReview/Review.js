@@ -2,9 +2,11 @@ import React from "react";
 import { ImageGallery } from "./ImageGallery/ImageGallery";
 import "./Review.css";
 import Card from "../CreateExperience/Card/Card"
+import Rating from "./Ratings";
 
 const Review = () => {
   return (
+    <>
     <Card className='px-1'>
       <div className="review">
         <div className="reviewHeading">
@@ -93,6 +95,12 @@ const Review = () => {
         </div>
       </div>
     </Card>
+    <div>
+    <div className="mb-5 mt-5">
+        <Rating />
+      </div>
+    </div>
+    </>
   );
 };
 

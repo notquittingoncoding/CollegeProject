@@ -1,10 +1,9 @@
 import React from "react";
-import { a } from "react-router-dom";
 import "./ImageGallery.css";
-import img1 from "../images/img1.jpg";
-import img2 from "../images/img2.jpg";
-import img3 from "../images/img3.jpg";
-import img4 from "../images/img4.jpg";
+// import img1 from "../images/img1.jpg";
+// import img2 from "../images/img2.jpg";
+// import img3 from "../images/img3.jpg";
+// import img4 from "../images/img4.jpg";
 import image from "./data";
 
 // Import Simple React Lightbox
@@ -40,7 +39,7 @@ function ImgCard() {
         >
           <div className="imgcard">
             <div style={{ height: "250px", width: "100%" }}>
-              <img src={`/images/${image.imageName}`}  />
+              <img src={`/images/${image.imageName}`}  alt="" />
             </div>
             <div
               style={{
