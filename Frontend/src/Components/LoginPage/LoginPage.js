@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import './LoginPage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import loginSideImage from './Images/loginImage.png'
 import { NavLink } from "react-router-dom";
 import Card from '../CreateExperience/Card/Card';
+import { AuthContext } from "../../authContext/AuthContext";
+import { login } from "../../authContext/apiCalls";
 
 export const LoginPage = () => {
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+
+    const {dispatch}=useContext(AuthContext);
+
+    const handleLogin=(e)=>{
+      e.preventDefault();
+      login({email,password},dispatch)
+  
+    }
     return (
         
             <Card>
@@ -31,18 +43,25 @@ export const LoginPage = () => {
 
                                             <div className="form-outline mb-2">
                                                 
-                                                <input type="email" id="email-id" className="form-control form-control-md" placeholder='Enter Email'/>
+                                                <input type="email" id="email-id" className="form-control form-control-md" 
+                                                placeholder='Enter Email'
+                                                onChange={(e)=>setEmail(e.target.value)} 
+                                                />
 
                                             </div>
 
                                             <div className="form-outline mb-2">
                                                 
-                                                <input type="password" id="password" className="form-control form-control-md" placeholder="Password"/>
+                                                <input type="password" id="password" className="form-control form-control-md"
+                                                 placeholder="Password"
+                                                 onChange={(e)=>setPassword(e.target.value)} 
+                                                 />
 
                                             </div>
 
                                             <div className="pt-1 mb-4">
-                                                <button className="btn btn-dark btn-md" type="button">Login</button>
+                                                <button className="btn btn-dark btn-md" type="button"
+                                                onClick={handleLogin}>Login</button>
                                             </div>
 
                                             <NavLink to="#" className="small text-muted" href="#!">Forgot password?</NavLink>

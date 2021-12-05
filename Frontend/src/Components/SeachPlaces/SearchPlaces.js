@@ -10,7 +10,7 @@ export const SearchPlaces = () => {
   const [locationInput, setLocationInput] = useState("");
   const [placeInput, setPlaceInput] = useState("");
   const [userInput, setUserInput] = useState("");
-  
+
   // const data = [
   //   "Taj Mahal",
 
@@ -56,16 +56,37 @@ export const SearchPlaces = () => {
     },
   ];
   const [filterData, setFilterData] = useState(res);
-  const filterFunc=()=>{
-    const newFilterData=res.filter((elem)=>{
-     return (locationInput!==""?elem.location===locationInput:elem.location!==locationInput
-     && placeInput!==""?elem.place===placeInput:elem.place!==placeInput 
-     && userInput!==""?elem.user===userInput:elem.user!==userInput)
+  const PostData = async(e)=>{
 
-// return elem.location===locationInput && elem.place===placeInput && elem.user===userInput;
-    })
-    setFilterData(newFilterData);
+
+try{
+    const res=await fetch("/destinations" +locationInput,placeInput,userInput,{
+      method: "GET",
+      headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+      },
+      credentials: "include"
+  })
+    const data = await res.json();
+    setFilterData(data);
   }
+  catch(err)
+  {
+    console.log(err);
+  }
+
+}
+//   const filterFunc=()=>{
+//     const newFilterData=res.filter((elem)=>{
+//      return (locationInput!==""?elem.location===locationInput:elem.location!==locationInput
+//      && placeInput!==""?elem.place===placeInput:elem.place!==placeInput 
+//      && userInput!==""?elem.user===userInput:elem.user!==userInput)
+
+// // return elem.location===locationInput && elem.place===placeInput && elem.user===userInput;
+//     })
+//     setFilterData(newFilterData);
+//   }
 
   return (
     <div className="searchplacesouter">
@@ -137,7 +158,7 @@ export const SearchPlaces = () => {
                   <div className="row">
                     <div className="col-12 centr">
                       <button type="button" className="btn btn-dark"
-                      onClick={filterFunc} >
+                      onClick={PostData} >
                         Search
                       </button>
                     </div>
@@ -192,7 +213,7 @@ export const SearchPlaces = () => {
               <div className="row">
                 <div className="col-12 centr">
                   <button type="button" className="btn btn-dark"
-                   onClick={filterFunc} >
+                   onClick={PostData} >
                     Search
                   </button>
                 </div>

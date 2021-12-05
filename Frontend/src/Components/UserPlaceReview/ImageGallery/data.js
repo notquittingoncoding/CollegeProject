@@ -1,4 +1,4 @@
-export default [
+const image= [
 	{ id: '1', imageName: 'img1.jpeg', tag: 'free' },
 	{ id: '2', imageName: 'img2.jpeg', tag: 'new' },
 	{ id: '3', imageName: 'img3.jpeg', tag: 'pro' },
@@ -7,3 +7,4 @@ export default [
 	{ id: '6', imageName: 'img6.jpeg', tag: 'new' },
 
 ];
+export default image;
